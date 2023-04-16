@@ -25,22 +25,22 @@ const buttonPressed = () => {
     } else if (userValue<computerValue) {
         winner = "Computer";
     }
-
-    document.querySelector("div").innerHTML =
-    <div id="grid-container">
-        <div>
-            <p>Player value: ${userValue}</p>
-            <imgn src="images/dice0"${userValue}".png"/>
-        </div>
-        <div>
-            <p>Computer value: ${computerValue}</p>
-            <img src="images/dice0" + ${computerValue} + ".png"/>
-        </div>
-    </div>
     
-    <p>Winner is: ${winner}</p>
-
+    document.querySelector("div").innerHTML = `
+        <div id="grid-container">
+            <div>
+                <p>Player value: ${userValue}</p>
+                <img src="images/dice0${userValue}.png">
+            </div>
+            <div>
+                <p>Computer value: ${computerValue}</p>
+                <img src="images/dice0${computerValue}.png">
+            </div>
+        </div>
+        <br>
+        <p>Winner is: ${winner}</p>
+    `
     document.querySelector("input").value = "";
-    document.querySelector("button").addEventListener("click", buttonPressed);
-    
 }
+
+document.querySelector("button").addEventListener("click", buttonPressed);
